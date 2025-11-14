@@ -1,0 +1,55 @@
+MediSwap
+Marketplace con subasta pública de órdenes para productos farmacéuticos y trazabilidad en la cadena de suministro.
+
+Descripción
+MediSwap es una plataforma digital que optimiza la compra y distribución de medicamentos gracias a:
+
+Subasta pública de órdenes de compra: Farmacias, distribuidores y laboratorios pueden publicar órdenes. Los proveedores compiten en una subasta transparente para ofrecer sus productos.
+
+Trazabilidad de supply chain: Cada producto es trazado desde su origen hasta el destino final. El registro digital permite visualizar su recorrido, garantizando transparencia y seguridad.
+
+Problema que resuelve
+Alto costo y baja competencia en compras de productos farmacéuticos.
+
+Poca visibilidad y dificultad para auditar el viaje de los medicamentos.
+
+Necesidad de transparencia y control en todo el proceso logístico.
+
+Solución propuesta
+Subastas abiertas que mejoran precio y tiempos de entrega.
+
+Trazabilidad digital con registro único por producto y consulta en tiempo real.
+
+Auditoría de procesos de compra-venta y logística; integración con diversos actores y plataformas.
+
+Facilita la interoperabilidad y control para farmacias, laboratorios y distribuidores.
+
+Tecnologías recomendadas
+Blockchain: Para el registro de subastas y trazabilidad.
+
+Frontend web: React, Next.js u otra tecnología moderna.
+
+API REST: Para integrar actores externos.
+
+Base de datos NoSQL: Auditoría y reportes.
+
+Instalación rápida
+bash
+git clone https://github.com/Urbantech-HL/sub0-hackaton-mediswap.git
+cd sub0-hackaton-mediswap
+npm install
+npm start
+Roadmap y mejoras futuras
+Dashboard con visualización de órdenes y subastas.
+
+Módulo avanzado de analytics y reportes.
+
+Integración con logística externa y tracking por GPS.
+
+Soporte a regulaciones y reportes automáticos.
+
+Seguridad y legal
+Evita subir claves privadas o datos personales.
+
+Cumple normativas de protección de datos y trazabilidad.
+
