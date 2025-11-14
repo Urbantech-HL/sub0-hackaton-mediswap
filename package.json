@@ -1,0 +1,22 @@
+{
+  "name": "2025_11_14-sub0-polkadot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "start": "tsx voting-board.ts",
+    "build": "tsc",
+    "dev": "tsx watch voting-board.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@arkiv-network/sdk": "^0.4.4",
+    "dotenv": "^17.2.3",
+    "ethers": "^6.15.0",
+    "tslib": "^2.8.1"
+  }
+}
