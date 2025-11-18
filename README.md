@@ -2,7 +2,7 @@
 
 # 🏥 PharmaBid
 
-### Blockchain-Powered Reverse Auctions Ending Pharmaceutical Procurement Corruption
+### Blockchain-Powered Public Tenders Ending Pharmaceutical Procurement Corruption
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.20-363636?logo=solidity)](https://soliditylang.org/)
@@ -33,15 +33,15 @@
 
 ## 💡 The Solution
 
-**PharmaBid** is a transparent, blockchain-based reverse auction marketplace that connects public hospitals with pharmaceutical suppliers through:
+**PharmaBid** is a transparent, blockchain-based public tender marketplace that connects public hospitals with pharmaceutical suppliers through:
 
-✅ **CoW Swap-Inspired Batch Auctions** → MEV-proof uniform pricing  
+✅ **CoW Swap-Inspired Batch Settlement** → MEV-proof uniform pricing via reverse auction mechanism  
 ✅ **Arkiv Data Layer** → Immutable, queryable procurement history  
 ✅ **Smart Contract Settlement** → Automated, trustless execution  
 ✅ **Public Transparency Portal** → Open contracting for citizen oversight  
 
 ### Proven Impact
-- **20-35% cost reduction** (reverse auction industry benchmarks)
+- **20-35% cost reduction** (competitive tender industry benchmarks)
 - **100% traceability** on all transactions
 - **0% corruption risk** through trustless automation
 - **Millions of lives** saved via equitable medicine access
@@ -63,7 +63,7 @@
                   │
 ┌─────────────────▼───────────────────────────────────┐
 │      SMART CONTRACTS (Solidity + Hardhat v3)       │
-│  ProcurementAuction | BatchSettlement | Escrow     │
+│  ProcurementTender | BatchSettlement | Escrow      │
 └─────────────────┬───────────────────────────────────┘
                   │
 ┌─────────────────▼───────────────────────────────────┐
@@ -77,19 +77,19 @@
 ## ✨ Key Features
 
 ### For Hospitals
-- **One-Click Procurement**: Create standardized demand requests in seconds
-- **Competitive Pricing**: Batch auctions ensure best available market prices
+- **One-Click Tender Creation**: Create standardized procurement requests in seconds
+- **Competitive Pricing**: Batch settlement with reverse auction mechanism ensures best available market prices
 - **Real-Time Tracking**: Monitor bid activity and settlements live
 - **Historical Analytics**: Compare prices across time, regions, and suppliers
 
 ### For Pharmaceutical Suppliers
 - **Fair Competition**: Uniform clearing prices eliminate bid manipulation
-- **Transparent Process**: Clear rules, public criteria, automated settlement
+- **Transparent Process**: Clear tender criteria, public rules, automated settlement
 - **Reputation Building**: On-chain track record increases trust and visibility
 - **Efficient Operations**: Reduced paperwork, instant payments via escrow
 
 ### For Citizens & Auditors
-- **Full Transparency**: Public dashboard showing all procurement activity
+- **Full Transparency**: Public dashboard showing all procurement tender activity
 - **Corruption Monitoring**: Automated anomaly detection flags suspicious patterns
 - **Open Data Export**: CSV/API access for independent analysis
 - **Impact Metrics**: Track cost savings and medicine accessibility in real-time
@@ -151,27 +151,27 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Backend
 - **API Routes**: Next.js API routes
-- **Solver Engine**: Node.js worker threads
+- **Solver Engine**: Node.js worker threads (reverse auction mechanism)
 - **Database**: Arkiv (on-chain data layer)
 
 ---
 
 ## 📖 Usage Examples
 
-### Creating a Procurement Demand (Hospital)
+### Creating a Procurement Tender (Hospital)
 
 ```typescript
 import { useWriteContract } from 'wagmi';
-import { PROCUREMENT_DEMAND_ABI } from '@/contracts';
+import { PROCUREMENT_TENDER_ABI } from '@/contracts';
 
-function CreateDemandForm() {
+function CreateTenderForm() {
   const { writeContract } = useWriteContract();
 
-  const createDemand = async () => {
+  const createTender = async () => {
     await writeContract({
       address: '0x...',
-      abi: PROCUREMENT_DEMAND_ABI,
-      functionName: 'createDemand',
+      abi: PROCUREMENT_TENDER_ABI,
+      functionName: 'createTender',
       args: [
         'Paracetamol 500mg',  // product name
         1000000n,              // quantity (1 million units)
@@ -181,7 +181,7 @@ function CreateDemandForm() {
     });
   };
 
-  return <button onClick={createDemand}>Create Demand</button>;
+  return <button onClick={createTender}>Create Tender</button>;
 }
 ```
 
@@ -192,9 +192,9 @@ import { arkiv } from '@/lib/arkiv';
 
 async function getPriceHistory(productName: string) {
   const history = await arkiv.query({
-    table: 'batch_auction_records',
+    table: 'batch_tender_records',
     where: {
-      'demands.productName': productName,
+      'tenders.productName': productName,
       'timestamp': {
         $gte: new Date('2024-01-01'),
         $lte: new Date('2024-12-31')
@@ -233,7 +233,7 @@ async function getPriceHistory(productName: string) {
 - [x] Smart contract deployment (Sepolia)
 - [x] Arkiv data layer integration
 - [x] Hospital & supplier dashboards
-- [x] Batch auction mechanism
+- [x] Batch tender mechanism with reverse auction settlement
 - [x] Public transparency portal
 
 ### Phase 2: Production (Q1 2025)
@@ -246,7 +246,7 @@ async function getPriceHistory(productName: string) {
 ### Phase 3: Scale (Q2 2025)
 - [ ] 25 hospitals across 3 countries
 - [ ] Government partnerships (Health Ministries)
-- [ ] Regulatory compliance certifications
+- [ ] Regulatory compliance certifications (EU Public Procurement Directive)
 - [ ] $5M monthly trading volume
 - [ ] AI-powered price prediction analytics
 
@@ -323,6 +323,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ### Research & References
 - [Transparency International: Pharmaceutical Corruption Report](https://www.transparency.org/en/publications/global-corruption-report-2006)
 - [WHO: Measuring Transparency in Public Pharmaceutical Sector](https://apps.who.int/iris/handle/10665/135556)
+- [WHO: Managing the Tender Process](https://msh.org/resources/managing-the-tender-process/)
 - [CoW Protocol Documentation](https://docs.cow.fi/)
 - [Arkiv Network](https://arkiv.network/)
 
